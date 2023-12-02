@@ -3,8 +3,10 @@ const Post = require('../models/Post');
 // Create a new post
 const createPost = async (req, res) => {
   try {
-    const { title, content, author, categories, tags, featured_image } = req.body;
-
+    const author = req.userId;
+    console.log(author);
+    const { title, content, categories, tags, featured_image } = req.body;
+    // TODO ADD VALIDATION
     const newPost = new Post({
       title,
       content,
