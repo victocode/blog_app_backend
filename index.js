@@ -3,8 +3,8 @@ const app = express();
 const connectDB = require('./config/database');
 const userRoutes = require('./app/routes/userRoutes');
 const postRoutes = require('./app/routes/postRoutes');
-
-const port = 8080;
+require('dotenv').config();
+const port = process.env.PORT || 8080;
 // Connect to the database
 connectDB();
 
